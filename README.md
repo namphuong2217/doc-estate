@@ -33,7 +33,7 @@
 
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserDTOClass.png)
 
-* ``RegisterRequest Class`` : handle adding new user
+* ``RegisterRequest Class`` : dhandle adding new user
 
 ![RegisterRequest](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/RegisterRequestClass.png)
 
