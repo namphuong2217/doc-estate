@@ -21,6 +21,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
+    // Task 1 handle persistence new user to database
     @Transactional
     public void register(RegisterRequest registerRequest) {
         User user = new User();
@@ -31,6 +32,14 @@ public class UserService {
         userRepository.save(user);
     }
 
+    // Task 2 find user by name
+    public Optional<UserDTO> findUserByName(String name) {
+        User user = userRepository.findByName(name).orElse(null);
+        return Optional.ofNullable(mapToUserDTO(user));
+
+    }
+
+    // Task 3 find all users, return a list
     public List<UserDTO> findAllUsers() {
         return userRepository.findAll()
                 .stream()
@@ -38,6 +47,7 @@ public class UserService {
                 .collect(toList());
     }
 
+    // Task 3 helper function to remove password from response data
     private UserDTO mapToUserDTO(User user) {
         return UserDTO.builder()
                 .name(user.getName())
@@ -46,12 +56,7 @@ public class UserService {
                 .build();
     }
 
-    public Optional<UserDTO> findUserByName(String name) {
-        User user = userRepository.findByName(name).orElse(null);
-        return Optional.ofNullable(mapToUserDTO(user));
-
-    }
-
+    // Task 4 delete user by name
     @Transactional
     public void deleteUser(String name) {
         userRepository.deleteByName(name);

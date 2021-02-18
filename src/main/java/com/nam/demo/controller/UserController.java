@@ -21,12 +21,14 @@ public class UserController {
     @Autowired
     private final UserService userService;
 
+    // Task 1: Add new user
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody RegisterRequest registerRequest){
         userService.register(registerRequest);
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    // Task 2: Query a user with name
     @GetMapping("/user/{name}")
     public ResponseEntity<?> getUser(@PathVariable String name){
         Optional<UserDTO> userDTO = userService.findUserByName(name);
@@ -35,12 +37,13 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    // return all users with all information without password
+    // Task 3: Return all users with all information without password
     @GetMapping("/users")
     public ResponseEntity<List<UserDTO>> getAllUsers(){
         return ResponseEntity.status(HttpStatus.OK).body(userService.findAllUsers());
     }
 
+    // Task 4: Delete a user by name
     @DeleteMapping("/user/{name}")
     public ResponseEntity<?> deleteUser(@PathVariable String name){
         userService.deleteUser(name);
