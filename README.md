@@ -29,7 +29,7 @@
 
 ![User Model](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserClass.png)
 
-* ``UserDTO Class`` as data to return to client
+* ``UserDTO Class`` : data to return to client
 
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserDTOClass.png)
 
@@ -47,7 +47,7 @@
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserServiceClass1.png)
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserServiceClass2.png)
 
-* ``UserRepository Class`` : hanld persistence to database
+* ``UserRepository Class`` : han persistence to database
 
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserRepositoryClass.png)
 
