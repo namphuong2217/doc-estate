@@ -19,39 +19,39 @@
 
 ![Query All Users](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/QueryAllUsers.png)
 
-* Delete User
+* Delete User by name
 
 ![Delete User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/DeleteUser.png)
 
 ### Source code
 
-* ``User Model/Entity``
+* ``User Model/Entity`` 
 
 ![User Model](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserClass.png)
 
-* ``UserDTO Class``
+* ``UserDTO Class`` as data to return to client
 
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserDTOClass.png)
 
-* ``RegisterRequest Class`` 
+* ``RegisterRequest Class`` : handle adding new user
 
 ![RegisterRequest](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/RegisterRequestClass.png)
 
-* ``UserController Class``
+* ``UserController Class`` : receive client's requests
 
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserControllerClass1.png)
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserControllerClass2.png)
 
-* ``UserService Class``
+* ``UserService Class`` : handle internal logic
 
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserServiceClass1.png)
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserServiceClass2.png)
 
-* ``UserRepository Class``
+* ``UserRepository Class`` : hanld persistence to database
 
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/UserRepositoryClass.png)
 
-* ``application.properties``
+* ``application.properties`` : configuration
 
 ![User DTO](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/ApplicationProperties.png)
 
