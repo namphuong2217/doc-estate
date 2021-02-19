@@ -2,9 +2,11 @@ package com.nam.demo.service;
 
 import com.nam.demo.dto.RegisterRequest;
 import com.nam.demo.dto.UserDTO;
+import com.nam.demo.exception.GlobalException;
 import com.nam.demo.model.User;
 import com.nam.demo.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +18,7 @@ import static java.util.stream.Collectors.toList;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class UserService {
 
     private final UserRepository userRepository;
@@ -32,14 +35,18 @@ public class UserService {
         userRepository.save(user);
     }
 
-    // Task 2 find user by name
-    public Optional<UserDTO> findUserByName(String name) {
-        User user = userRepository.findByName(name).orElse(null);
-        return Optional.ofNullable(mapToUserDTO(user));
+    // Task 2 find user by id
+    @Transactional(readOnly = true)
+    public UserDTO findUserById(Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new GlobalException("User with given id not found: " + id));
+        log.info("Exception at Service layer: delete by id failed. ");
+        return this.mapToUserDTO(user);
 
     }
 
     // Task 3 find all users, return a list
+    @Transactional(readOnly = true)
     public List<UserDTO> findAllUsers() {
         return userRepository.findAll()
                 .stream()
@@ -56,9 +63,9 @@ public class UserService {
                 .build();
     }
 
-    // Task 4 delete user by name
+    // Task 4 delete user by id
     @Transactional
-    public void deleteUser(String name) {
-        userRepository.deleteByName(name);
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
     }
 }
