@@ -2,6 +2,8 @@ package com.nam.demo.controller;
 
 import com.nam.demo.dto.RegisterRequest;
 import com.nam.demo.dto.UserDTO;
+import com.nam.demo.exception.RecordNotFoundException;
+import com.nam.demo.exception.ResourceAlreadyExistsException;
 import com.nam.demo.model.User;
 import com.nam.demo.service.UserService;
 import lombok.AllArgsConstructor;
@@ -11,10 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
@@ -27,14 +27,18 @@ public class UserController {
     // Task 1: Add new user
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody @Valid RegisterRequest registerRequest) {
+        if(userService.emailExisted(registerRequest.getEmail()))
+            throw new ResourceAlreadyExistsException("Email already registered");
         userService.register(registerRequest);
-        return ResponseEntity.ok("User register successful");
+        return ResponseEntity.ok("User has been registered successfully");
     }
 
     // Task 2: Query a user with name
     @GetMapping("/user/{id}")
     public ResponseEntity<UserDTO> getUser(@PathVariable Long id) {
         UserDTO userDTO = userService.findUserById(id);
+        if (userDTO == null)
+            throw new RecordNotFoundException("User with given id not found: " + id);
         return ResponseEntity.ok().body(userDTO);
 
     }
@@ -48,7 +52,10 @@ public class UserController {
     // Task 4: Delete a user by id
     @DeleteMapping("/user/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable @Valid Long id) {
+        UserDTO userDTO = userService.findUserById(id);
+        if (userDTO == null)
+            throw new RecordNotFoundException("User with given id not found: " + id + ", cannot delete user");
         userService.deleteUser(id);
-        return ResponseEntity.ok().body("User deleted successful");
+        return ResponseEntity.ok().body("User has been deleted successfully");
     }
 }

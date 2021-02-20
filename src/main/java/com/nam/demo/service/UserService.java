@@ -28,27 +28,32 @@ public class UserService {
     // Task 1 handle persistence new user to database
     @Transactional(rollbackFor = Exception.class)
     public void register(RegisterRequest registerRequest) {
-        try {
-            User user = new User();
-            user.setName(registerRequest.getName());
-            user.setEmail(registerRequest.getEmail());
-            user.setPassword(passwordEncoder.encode((registerRequest.getPassword())));
+        User user = new User();
+        user.setName(registerRequest.getName());
+        user.setEmail(registerRequest.getEmail());
+        user.setPassword(passwordEncoder.encode((registerRequest.getPassword())));
 
-            userRepository.save(user);
-        } catch (Exception e) {
-            throw new ResourceAlreadyExistsException("Email");
-        }
+        userRepository.save(user);
+    }
+
+    // Task 2 helper function find user by email
+    @Transactional(readOnly = true)
+    public boolean emailExisted(String email) {
+        Optional<User> user = userRepository.findByEmail(email);
+        if (user.isPresent())
+            return true;
+        else
+            return false;
     }
 
     // Task 2 find user by id
     @Transactional(readOnly = true)
     public UserDTO findUserById(Long id) {
-        User user = userRepository.findById(id)
-                .orElseThrow(() -> new RecordNotFoundException("User with given id not found: " + id));
-        log.info("Exception at Service layer: delete by id failed. ");
-        return this.mapToUserDTO(user);
-
-
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent())
+            return this.mapToUserDTO(user.get());
+        else
+            return null;
     }
 
     // Task 3 find all users, return a list
@@ -73,10 +78,6 @@ public class UserService {
     // Task 4 delete user by id
     @Transactional
     public void deleteUser(Long id) {
-        try {
-            userRepository.deleteById(id);
-        } catch (Exception e) {
-            throw new RecordNotFoundException("User with given id not found: " + id);
-        }
+        userRepository.deleteById(id);
     }
 }
