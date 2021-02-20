@@ -71,14 +71,21 @@
 
 [``WebSecurityConfig``](https://github.com/namphuong2217/doc-estate/blob/main/src/main/java/com/nam/demo/config/WebSecurityConfig.java)
 
-* Spring Security 
+* UserDetails Class wrap around User model required by Spring Security 
 
+[``CustomUserDetails.``](https://github.com/namphuong2217/doc-estate/blob/main/src/main/java/com/nam/demo/security/CustomUserDetails.java)\
 
-[``WebSecurityConfig``](https://github.com/namphuong2217/doc-estate/blob/main/src/main/java/com/nam/demo/config/WebSecurityConfig.java)
+* CustomUserDetailsService Class manages UserDetails Class required by Spring Security 
 
-[``WebSecurityConfig``](https://github.com/namphuong2217/doc-estate/blob/main/src/main/java/com/nam/demo/config/WebSecurityConfig.java)
+[``CustomUserDetailsService``](https://github.com/namphuong2217/doc-estate/blob/main/src/main/java/com/nam/demo/security/CustomUserDetailsService.java)
 
-[``WebSecurityConfig``](https://github.com/namphuong2217/doc-estate/blob/main/src/main/java/com/nam/demo/config/WebSecurityConfig.java)
+* JwtAuthenticationFilter: Custom filter for authentication in Spring Security 
+
+[``JwtAuthenticationFilter``](https://github.com/namphuong2217/doc-estate/blob/main/src/main/java/com/nam/demo/security/JwtAuthenticationFilter.java)
+
+* JwtProvider: JSON Web Token for authentication in Spring Security 
+
+[``JwtProvider``](https://github.com/namphuong2217/doc-estate/blob/main/src/main/java/com/nam/demo/security/JwtProvider.java)
 
 
 
