@@ -3,21 +3,46 @@
 
 ### Testing API
 
-* Register User 1
-
-![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/RegisterUser1.png)
-
-* Register User 2 
-
-![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/RegisterUser2.png)
-
-* Query User by name
-
-![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/QueryUser.png)
-
 * Query All Users
 
-![Query All Users](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/QueryAllUsers.png)
+![Query All Users](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/1GetAllUsers.png)
+
+* Add a new user 
+
+![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/2PostNewUserSuccess.png)
+
+
+* Add a new user failed
+
+![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/2PostNewUserFail.png)
+
+* Add a new user  Failed
+
+![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/3PostNewUserFail.png)
+
+
+* Query A User by Id 
+
+![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/4GetUserSuccess.png)
+
+
+* Query A User by Id Failed
+
+![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/5GetUserFail.png)
+
+
+
+* Delete a user
+
+![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/5GetUserFail.png)
+
+* Delete a user failed
+
+![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/7DeleteUserFail.png)
+
+
+
+
 
 * Delete User by name
 
