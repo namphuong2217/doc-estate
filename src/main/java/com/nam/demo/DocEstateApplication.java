@@ -10,4 +10,22 @@ public class DocEstateApplication {
 		SpringApplication.run(DocEstateApplication.class, args);
 	}
 
+//implements CommandLineRunner
+//	@Autowired
+//	UserRepository userRepository;
+//	@Autowired
+//	PasswordEncoder passwordEncoder;
+//
+//	@Override
+//	public void run(String... args) throws Exception {
+		// Khi chương trình chạy
+		// Insert vào csdl một user.
+//		User user = new User();
+//		user.setUsername("admin");
+//		user.setEmail("admin@gmail.com");
+//		user.setPassword(passwordEncoder.encode("admin"));
+//		userRepository.save(user);
+//		System.out.println(user);
+//	}
+
 }

@@ -29,14 +29,14 @@ public class UserService {
     @Transactional(rollbackFor = Exception.class)
     public void register(RegisterRequest registerRequest) {
         User user = new User();
-        user.setName(registerRequest.getName());
+        user.setUsername(registerRequest.getName());
         user.setEmail(registerRequest.getEmail());
         user.setPassword(passwordEncoder.encode((registerRequest.getPassword())));
 
         userRepository.save(user);
     }
 
-    // Task 2 helper function find user by email
+    // Task 2 helper function. Find user by email
     @Transactional(readOnly = true)
     public boolean emailExisted(String email) {
         Optional<User> user = userRepository.findByEmail(email);
@@ -66,10 +66,10 @@ public class UserService {
                 ;
     }
 
-    // Task 3 helper function to remove password from response data
+    // Task 3 helper function to remove password from User . Return back UserDTO to client as response data
     private UserDTO mapToUserDTO(User user) {
         return UserDTO.builder()
-                .name(user.getName())
+                .name(user.getUsername())
                 .email(user.getEmail())
                 .id(user.getId())
                 .build();
