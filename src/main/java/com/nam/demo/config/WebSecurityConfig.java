@@ -46,6 +46,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity httpSecurity) throws Exception {
+
+        // configuration without Spring Security
         httpSecurity.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/api/**")
@@ -53,7 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated();
 
-//        configuration for enabling Spring security:
+//        configuration for enabling Spring Security:
 //                httpSecurity
 //                .cors() //block request from other domain
 //                .and()
