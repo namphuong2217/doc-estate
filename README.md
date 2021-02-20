@@ -1,7 +1,7 @@
 # doc-estate
 # Overview
 
-### Testing API
+### Aufgabe 1 Testing API
 
 * Query All Users
 
@@ -31,22 +31,39 @@
 ![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/5GetUserFail.png)
 
 
+* Delete a user 
 
-* Delete a user
+![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/6DeleteUserSuccess.png)
 
-![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/5GetUserFail.png)
 
 * Delete a user failed
 
-![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/7DeleteUserFail.png)
+![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/5GetUserFail.png)
 
 
 
+### Aufgabe 2 React UI
+
+* Query All Users
+
+![Query All Users](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/8ReactGetAllUsers.png)
 
 
-* Delete User by name
 
-![Delete User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/DeleteUser.png)
+* Query A User by Id 
+
+![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/9ReactGetUserSuccess.png)
+
+
+* Query A User by Id Failed
+
+![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/9ReactGetUserFail.png)
+
+* Delete a user 
+
+![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/10ReactDeleteUser.png)
+
+
 
 ### Source code
 
