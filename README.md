@@ -44,10 +44,10 @@
 
 ### Aufgabe 2 React UI
 
+
 * Query All Users
 
 ![Query All Users](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/8ReactGetAllUsers.png)
-
 
 
 * Query A User by Id 
@@ -63,6 +63,10 @@
 
 ![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/10ReactDeleteUser.png)
 
+
+* Register new user
+
+![Query All Users](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/111ReactFrontendRegister.png)
 
 
 ### Aufgabe 3 Spring Security
