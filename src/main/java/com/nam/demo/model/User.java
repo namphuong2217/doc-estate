@@ -1,5 +1,6 @@
 package com.nam.demo.model;
 
+import com.nam.demo.validators.UniqueValue;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class User {
     @NotBlank(message = "Must give a name")
     private String name;
     @NotBlank( message = "Email can not be empty")
+//    @UniqueValue
     private String email;
     @NotBlank( message = "Password can not be empty")
     private String password;

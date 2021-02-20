@@ -17,7 +17,7 @@ public class RegisterRequest {
     private String name;
     @NotBlank( message = "Email can not be empty")
     @Email
-    private String email;
+    private String email; // throws already exist exception
     @NotBlank( message = "Password can not be empty")
     private String password;
 }

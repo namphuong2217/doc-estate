@@ -2,7 +2,8 @@ package com.nam.demo.service;
 
 import com.nam.demo.dto.RegisterRequest;
 import com.nam.demo.dto.UserDTO;
-import com.nam.demo.exception.GlobalException;
+import com.nam.demo.exception.RecordNotFoundException;
+import com.nam.demo.exception.ResourceAlreadyExistsException;
 import com.nam.demo.model.User;
 import com.nam.demo.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -25,23 +26,28 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
 
     // Task 1 handle persistence new user to database
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public void register(RegisterRequest registerRequest) {
-        User user = new User();
-        user.setName(registerRequest.getName());
-        user.setEmail(registerRequest.getEmail());
-        user.setPassword(passwordEncoder.encode((registerRequest.getPassword())));
+        try {
+            User user = new User();
+            user.setName(registerRequest.getName());
+            user.setEmail(registerRequest.getEmail());
+            user.setPassword(passwordEncoder.encode((registerRequest.getPassword())));
 
-        userRepository.save(user);
+            userRepository.save(user);
+        } catch (Exception e) {
+            throw new ResourceAlreadyExistsException("Email");
+        }
     }
 
     // Task 2 find user by id
     @Transactional(readOnly = true)
     public UserDTO findUserById(Long id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new GlobalException("User with given id not found: " + id));
+                .orElseThrow(() -> new RecordNotFoundException("User with given id not found: " + id));
         log.info("Exception at Service layer: delete by id failed. ");
         return this.mapToUserDTO(user);
+
 
     }
 
@@ -51,7 +57,8 @@ public class UserService {
         return userRepository.findAll()
                 .stream()
                 .map(this::mapToUserDTO)
-                .collect(toList());
+                .collect(toList())
+                ;
     }
 
     // Task 3 helper function to remove password from response data
@@ -66,6 +73,10 @@ public class UserService {
     // Task 4 delete user by id
     @Transactional
     public void deleteUser(Long id) {
-        userRepository.deleteById(id);
+        try {
+            userRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new RecordNotFoundException("User with given id not found: " + id);
+        }
     }
 }

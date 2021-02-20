@@ -15,6 +15,7 @@
 --');
 --insert into my_user (id, name, email, password) values (nextval('user_seq'), 'Steve Reeves', 'Reeves@gmail.com', '$2a$10$f3EHMliIBRP09G1ChqNOzewJd/xH9KLgDmdbGEGI83ZhneP.bivfy
 --');
+
 insert into my_user (id, name, email, password) values (nextval('user_seq'), 'Ronald Connor', 'connor@gmail.com', '$2a$10$f3EHMliIBRP09G1ChqNOzewJd/xH9KLgDmdbGEGI83ZhneP.bivfy
 ');
 insert into my_user (id, name, email, password) values (nextval('user_seq'), 'Jim Salvator', 'Sal@gmail.com', '$2a$10$f3EHMliIBRP09G1ChqNOzewJd/xH9KLgDmdbGEGI83ZhneP.bivfy
