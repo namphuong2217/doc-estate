@@ -1,4 +1,4 @@
-# doc-estate tasks
+# DocEstate tasks
 # Overview
 
 ### Aufgabe 1 Testing API
