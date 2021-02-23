@@ -1,4 +1,8 @@
 # DocEstate tasks
+
+##### 
+[app-react repository](https://github.com/namphuong2217/doc-estate-react)
+
 # Overview
 
 ### Aufgabe 1 Testing API
@@ -31,7 +35,7 @@
 ![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/5GetUserFail.png)
 
 
-* Delete a user with ``Delete User`` Button
+* Delete a user 
 
 ![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/6DeleteUserSuccess.png)
 
@@ -41,16 +45,15 @@
 ![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/5GetUserFail.png)
 
 
-
 ### Aufgabe 2 React UI
+
 
 * Query All Users
 
 ![Query All Users](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/8ReactGetAllUsers.png)
 
 
-
-* Query A User by Id 
+* Query A User by Id | ``Back To All Users`` button displays all users
 
 ![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/9ReactGetUserSuccess.png)
 
@@ -59,10 +62,14 @@
 
 ![Query User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/9ReactGetUserFail.png)
 
-* Delete a user 
+* Delete a user with ``Delete User`` Button
 
 ![Register User](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/10ReactDeleteUser.png)
 
+
+* Register new user | ``List All Users`` button displays all users
+
+![Query All Users](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/111ReactFrontendRegister.png)
 
 
 ### Aufgabe 3 Spring Security
