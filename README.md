@@ -96,7 +96,7 @@ JwtProvider: JSON Web Token for authentication in Spring Security
 
 * Spring Security Token
 
-[!Spring Security](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/Spring%20Security.png)
+![Spring Security](https://github.com/namphuong2217/doc-estate/blob/main/Documentation/Spring%20Security.png)
 
 
 
