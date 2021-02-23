@@ -71,7 +71,7 @@ public class UserController {
         return ResponseEntity.ok().body("User has been deleted successfully");
     }
 
-    // Aufgabe 3 Application of Spring Security JWT
+//     Aufgabe 3 Application of Spring Security JWT
     @PostMapping("/login")
     public LoginResponse authenticateUser(@RequestBody LoginRequest loginRequest){
 

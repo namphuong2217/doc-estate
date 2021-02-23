@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -26,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public JwtAuthenticationFilter jwtAuthenticationFilter(){
+    public JwtAuthenticationFilter jwtAuthenticationFilter() {
         return new JwtAuthenticationFilter();
     }
 
@@ -48,25 +49,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity httpSecurity) throws Exception {
 
         // configuration without Spring Security
-        httpSecurity.csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/api/**")
-                .permitAll()
-                .anyRequest()
-                .authenticated();
+//        httpSecurity.csrf().disable()
+//                .authorizeRequests()
+//                .antMatchers("/api/**")
+//                .permitAll()
+//                .anyRequest()
+//                .authenticated();
 
 //        configuration for enabling Spring Security:
-//                httpSecurity
-//                .cors() //block request from other domain
-//                .and()
-//                .authorizeRequests()
-//                .antMatchers("/api/login").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+        httpSecurity
+                .cors() //block request from other domain
+                .and()
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/api/login").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 
     }
-
 
 
 }

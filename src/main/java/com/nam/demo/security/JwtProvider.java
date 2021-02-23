@@ -3,16 +3,25 @@ package com.nam.demo.security;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import io.jsonwebtoken.*;
+
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
 @Component
 @Slf4j
 public class JwtProvider {
     // secret key reserved by server
-    private final String JWT_SECRET = "secret_key";
+    private final String JWT_SECRET = "8DD9E49408D12042E896EB7CCF000D6926104BD146231C9DA9D08AB1CB867A506740ED16835B0E42E4BAB7C992D3B708D593DF4FF320002E8F34058C1B6FD731";
 
     // expired time of token
     private final long JWT_EXPIRATION = 900000;
+
+//    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+//    kpg.ini;
+//
+//    public JwtProvider() throws NoSuchAlgorithmException {
+//    }
 
     // create JWT from user details
     public String generateToken(CustomUserDetails userDetails){
