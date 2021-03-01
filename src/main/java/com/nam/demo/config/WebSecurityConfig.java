@@ -48,24 +48,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity httpSecurity) throws Exception {
 
-        // configuration without Spring Security
-//        httpSecurity.csrf().disable()
-//                .authorizeRequests()
-//                .antMatchers("/api/**")
-//                .permitAll()
-//                .anyRequest()
-//                .authenticated();
+//         configuration without Spring Security
+        httpSecurity.csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/api/**")
+                .permitAll()
+                .anyRequest()
+                .authenticated();
 
 //        configuration for enabling Spring Security:
-        httpSecurity
-                .cors() //block request from other domain
-                .and()
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/api/login").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+//        httpSecurity
+//                .cors() //block request from other domain
+//                .and()
+//                .csrf().disable()
+//                .authorizeRequests()
+//                .antMatchers("/api/login").permitAll()
+//                .anyRequest().authenticated()
+//                .and()
+//                .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 
     }
 
