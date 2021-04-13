@@ -1,6 +1,26 @@
 ![images](https://github.com/namphuong2217/Social-Blogging-Platform/blob/main/documentation/realworld_logo.png)
 # DocEstate tasks
 
+"**Aufgabe 1 (Backend):**
+Bitte erstellen Sie mit Hilfe von Spring Boot eine REST Schnittstelle. Über die Schnittstelle sollen
+folgende Aktionen möglich sein:
+- Hinzufügen eines neuen Nutzers
+- Abfragen eines Nutzers
+- Listen aller Nutzer
+- Löschen eines Nutzers
+Die Nutzer sollen persistent gespeichert werden. Die konkrete Implementierung ist Ihnen überlassen.
+
+**Aufgabe 2 (Frontend):**
+Erstellen Sie ein zugehöriges User Interface. Das UI soll dabei an die REST Schnittstelle anknüpfen.
+Implementieren Sie alle Funktionen der REST Schnittstelle auch im UI.
+Für die Implementierung können Sie ein Framework/Bibliothek Ihrer Wahl nutzen (Angular, React,
+Thymeleaf etc.)
+
+**Aufgabe 3 (Security):**
+Damit nicht jeder auf die Anwendung zugreifen kann, sichern sie Ihre Schnittstelle mit Basic
+Authentication ab. Hierfür können Sie gerne auf Spring Security zurückgreifen."
+
+
 ##### 
 [app-react repository](https://github.com/namphuong2217/doc-estate-react)
 
