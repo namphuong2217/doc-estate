@@ -1,5 +1,5 @@
 ![images](https://github.com/namphuong2217/Social-Blogging-Platform/blob/main/documentation/realworld_logo.png)
-# DocEstate tasks
+# DocEstate Interview Tasks
 
 "**Aufgabe 1 (Backend):**
 
