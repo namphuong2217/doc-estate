@@ -1,6 +1,8 @@
 ![images](https://github.com/namphuong2217/Social-Blogging-Platform/blob/main/documentation/realworld_logo.png)
 # DocEstate Interview Tasks
 
+A small backend REST services.
+
 "**Aufgabe 1 (Backend):**
 
 Bitte erstellen Sie mit Hilfe von Spring Boot eine REST Schnittstelle. Über die Schnittstelle sollen
